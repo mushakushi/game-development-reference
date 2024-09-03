@@ -192,7 +192,7 @@ Changes from the current branch (e.g., the changes YOU made).
 ======= 
 Existing changes from a branch you're trying to merge into your current branch (e.g., the changes SOMEONE ELSE made).
 >>>>>>> <branch>
-```bash
+```
 
 Decide which change you want to accept, and delete everything else in the merge conflict, including the merge conflict markers to resolve it. Note that an empty change denotes deletion.
 
