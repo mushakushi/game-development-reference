@@ -213,9 +213,9 @@ git clean -df
 ```
 
 ### Git Submodules 
-Sometimes, it is impossible to store some assets in the same repository as your game code. For example, some third-party assets might be protected by an EULA that prevents you from redistributing, and you certainly shouldn’t “open-source” paid assets. Moving assets to a separate repository can allow you reduce space usage limits. Popular solutions include [Perforce](https://www.perforce.com/)*, [Git LFS](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage), [Unity DevOps](https://docs.unity.com/ugs/manual/devops/manual/unity-devops-home), but it’s more practical to use a private repository as a git submodule, which you can read about [here](https://github.blog/open-source/git/working-with-submodules/). 
+Sometimes, it is impossible to store some assets in the same repository as your game code. For example, some third-party assets might be protected by an EULA that prevents you from redistributing, and you certainly shouldn’t “open-source” paid assets. Moving assets to a separate repository can allow you reduce space usage limits. Popular solutions include [Perforce](https://www.perforce.com/)$^1$, [Git LFS](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage), [Unity DevOps](https://docs.unity.com/ugs/manual/devops/manual/unity-devops-home), but it’s more practical to use a private repository as a git submodule, which you can read about [here](https://github.blog/open-source/git/working-with-submodules/). 
 
-* _Perforce (or a self-hosted HelixCore instance) is an industry standard and, if money is not an issue, should be preferred. _
+$^1$ _Perforce (or a self-hosted HelixCore instance) is an industry standard and, if money is not an issue, should be preferred._
 
 ### Exiting Vim Git Commit Editor
 On Windows, press `Esc` then type `:wq`; press `Enter`. 
