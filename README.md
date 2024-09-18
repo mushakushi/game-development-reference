@@ -59,10 +59,11 @@ While you can use GitHub Desktop as an easy first way to work with your reposito
 >Local: Only on your machine. Remote: Shared on a server.
 
 ### Cloning Remote
-- If you want to start working with a git repository you first need to clone it using. This will set the **origin** alias to the same url:   
+- If you want to start working with a git repository you first need to clone it using this command, which will set the **origin** alias to the same url:   
 ```bash
 git clone <git-url>
 ```
+Add the `--recursive` command if the repository contains git submodules.
 
 - If, for whatever reason, the origin URL changes, update it with:  
 ```bash
@@ -218,6 +219,13 @@ Sometimes, it is impossible to store some assets in the same repository as your 
 You can specify the folder to place a sumbodlue in -- for example, in Assets -- using: 
 ```bash
 git submodule add <submodule-origin-url> <relative-path-to-submodule>
+```
+
+Note that in addition to `git pull`, you will now need to run `git submodule update --recursive`.
+
+To update a submodule, you'll need to `cd` into each sumbodule, from which you can issue git commands on that repository as usual. Alternatively, you can use [this command](https://stackoverflow.com/a/72219242/25169483): 
+```bash
+git submodule foreach "git add . && git commit -m <commit-message> && git push"
 ```
 
 $^1$ _Perforce (or a self-hosted HelixCore instance) is an industry standard and, if money is not an issue, should be preferred._
