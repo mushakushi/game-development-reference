@@ -223,7 +223,9 @@ git submodule add <submodule-origin-url> <relative-path-to-submodule>
 
 Note that in addition to `git pull`, you will now need to run `git submodule update --recursive`.
 
-To update a submodule, you'll need to `cd` into each sumbodule, from which you can issue git commands on that repository as usual. Alternatively, you can use [this command](https://stackoverflow.com/a/72219242/25169483): 
+To pull the latest changes from a submodule for the firs time use `git submodule update --init --recursive --remote`, after which use: `git pull --recurse-submodules`.
+
+To push a commit to a submodule, you'll need to `cd` into each sumbodule, from which you can issue git commands on that repository as usual. Alternatively, you can use [this command](https://stackoverflow.com/a/72219242/25169483): 
 ```bash
 git submodule foreach "git add . && git commit -m <commit-message> && git push"
 ```
