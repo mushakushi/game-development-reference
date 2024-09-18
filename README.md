@@ -19,7 +19,7 @@ There’s no one correct structure, but I heavily recommend one like this, which
 		|-- Materials
 		|-- Models 
 		|-- Textures 
-|-- Level
+	|-- Level
 		|-- Levels (e.g. Maps or Scenes)
 		|-- User Interfaces 
 		|-- [Prefabs in Unity can also go here]
