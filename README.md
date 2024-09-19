@@ -52,10 +52,12 @@ Read more about [project organization guidelines for Godot](https://docs.godoten
 
 ### Importance of Git
 While you can use GitHub Desktop as an easy first way to work with your repository, I highly recommend that you start to learn the Git CLI as soon as possible — especially since you will not get all the features of Git via GitHub Desktop.
+
+>[!TIP]
 >**Getting started:** https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F  
 **Git docs:** https://git-scm.com/docs  
-**More on branching and merging:** https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
 
+>[!NOTE]
 >Local: Only on your machine. Remote: Shared on a server.
 
 ### Cloning Remote
@@ -129,7 +131,8 @@ This status doesn't reflect the remote branch's current state – but the state 
 
 If there are any discrepancies between the status you see locally and what you see remotely, it’s likely you didn’t run `git fetch`. 
 
-> So many things will go wrong if you don’t understand these things and stay up-to-date
+>[!CAUTION]
+>So many things will go wrong if you don’t understand these things and stay up-to-date
 
 #### Applying Local Changes 
 At this point, you can make changes by editing the project as you normally would. Once you are done for the day follow these steps: 
@@ -148,7 +151,8 @@ git branch --set-upstream-to=origin/<remote-branch> <local-branch>
 ```
 to add tracking information without pushing first. 
 
-> This step should always be performed – unless you already specified this information on branch creation.
+>[!IMPORTANT]
+>This step should always be performed – unless you already specified this information on branch creation.
 
 #### Push Daily
 You should be pushing code every day you work on it, regardless of what branch it is to -- or how little the contribution is.
@@ -201,7 +205,8 @@ git merge B
 ```
 Then, Fix any merge conflicts and commit and push your changes. In some cases, this can be done directly in GitHub in one click.
 
-> More on branching and merging: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+>[!NOTE]
+>More on branching and merging: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
 
 ### Resolving Merge Conflicts
 In many cases, a merge conflict can be avoided by simply remembering to stay up-to-date with the remote changes (I’ve had this happen by Git not recognizing a Unity scene file as having merge commit markers). In the case this fails, you can resolve a conflict by using an editor such as Rider, VScode, or Meld. If, for some reason, git does not recognize the merge conflict, you can try to [manually mark it as conflicted](https://stackoverflow.com/questions/2780483/is-there-a-way-to-make-git-mark-a-file-as-conflicted), and retry. If this still fails to work, you may need to resolve it by hand. Understand that the skeleton of a merge conflict looks like this:
@@ -274,6 +279,7 @@ Briefly, here are some common examples of multiple features mistaken as one:
 | Input and logic that depends on input (e.g. input handling and player movement) | Input handling is a deceptively complex feature that should not be coupled with anything. |
 | A math library, which is always reusable, and logic that depends on it (e.g. AI algorithms and AI) | Libraries should be standardized across all features. It’s counterintuitive and unmaintainable to have multiple libraries with the same purpose. |
 
+>[!NOTE]
 > By separating out these into unique features we can better maintain code.
 
 ### Unity
