@@ -53,8 +53,7 @@ Read more about [project organization guidelines for Godot](https://docs.godoten
 ### Importance of Git
 While you can use GitHub Desktop as an easy first way to work with your repository, I highly recommend that you start to learn the Git CLI as soon as possible — especially since you will not get all the features of Git via GitHub Desktop.
 
->[!TIP]
->**Getting started:** https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F  
+**Getting started:** https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F  
 **Git docs:** https://git-scm.com/docs  
 
 >[!NOTE]
