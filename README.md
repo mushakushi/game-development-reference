@@ -159,7 +159,7 @@ You should be pushing code every day you work on it, regardless of what branch i
 ### Git Submodules 
 Sometimes, it is impossible to store some assets in the same repository as your game code. For example, some third-party assets might be protected by an EULA that prevents you from redistributing, and you certainly shouldn’t “open-source” paid assets. Moving assets to a separate repository can allow you reduce space usage limits. Popular solutions include [Perforce](https://www.perforce.com/)$^1$, [Git LFS](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage), [Unity DevOps](https://docs.unity.com/ugs/manual/devops/manual/unity-devops-home), but it’s more practical to use a private repository as a git submodule, which you can read about [here](https://github.blog/open-source/git/working-with-submodules/). 
 
-You can specify the folder to place a sumbodlue in -- for example, in Assets -- using: 
+You can specify the folder to place a submodule in -- for example, in Assets -- using: 
 ```bash
 git submodule add <submodule-origin-url> <relative-path-to-submodule>
 ```
@@ -168,7 +168,7 @@ Note that in addition to `git pull`, you will now need to run `git submodule upd
 
 To pull the latest changes from a submodule for the firs time use `git submodule update --init --recursive --remote`, after which use: `git pull --recurse-submodules`.
 
-To push a commit to a submodule, you'll need to `cd` into each sumbodule, from which you can issue git commands on that repository as usual. Alternatively, you can use [this command](https://stackoverflow.com/a/72219242/25169483): 
+To push a commit to a submodule, you'll need to `cd` into each submodule, from which you can issue git commands on that repository as usual. Alternatively, you can use [this command](https://stackoverflow.com/a/72219242/25169483): 
 ```bash
 git submodule foreach "git add . && git commit -m <commit-message> && git push"
 ```
