@@ -164,8 +164,6 @@ You can specify the folder to place a submodule in -- for example, in Assets -- 
 git submodule add <submodule-origin-url> <relative-path-to-submodule>
 ```
 
-Note that in addition to `git pull`, you will now need to run `git submodule update --recursive`.
-
 To pull the latest changes from a submodule for the firs time use `git submodule update --init --recursive --remote`, after which use: `git pull --recurse-submodules`.
 
 To push a commit to a submodule, you'll need to `cd` into each submodule, from which you can issue git commands on that repository as usual. Alternatively, you can use [this command](https://stackoverflow.com/a/72219242/25169483): 
@@ -173,7 +171,7 @@ To push a commit to a submodule, you'll need to `cd` into each submodule, from w
 git submodule foreach "git add . && git commit -m <commit-message> && git push"
 ```
 
-$^1$ _Perforce (or a self-hosted HelixCore instance) is an industry standard and, if money is not an issue, should be preferred._
+$^1$ _Perforce (or a self-hosted HelixCore instance) is an industry standard, and, if money is not an issue, should be preferred._
 
 ### Merge Requests
 Once the work on your branch is completed, you can merge your branch into master using a merge request, which you can read about [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request).
