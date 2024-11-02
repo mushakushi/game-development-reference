@@ -164,7 +164,7 @@ You can specify the folder to place a submodule in using:
 git submodule add <submodule-origin-url> <relative-path-to-submodule>
 ```
 
-To pull the latest changes from a submodule for the first time use `git submodule update --init --recursive --remote`, after which use: `git pull --recurse-submodules`. Like mentioned earlier, set up tracking information; this can be done by `cd`ing into the submodule's root directory and running `git checkout -b <branch> <origin>/<branch>` ([see more](https://stackoverflow.com/a/36375256/25169483)).
+To pull the latest changes from a submodule for the first time use `git submodule update --init --recursive --remote`, after which use: `git pull --recurse`. If that doesn't work `cd` into the directory and run `git pull origin <branch>`. Like mentioned earlier, set up tracking information; this can be done by `cd`ing into the submodule's root directory and running `git checkout -b <branch> <origin>/<branch>` ([see more](https://stackoverflow.com/a/36375256/25169483)).
 
 To push a commit to a submodule, you'll need to `cd` into each submodule, from which you can issue git commands on that repository as usual. Alternatively, you can use [this command](https://stackoverflow.com/a/72219242/25169483): 
 ```bash
