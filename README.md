@@ -238,7 +238,7 @@ git clean -df
 A deatched head means that you have checkouted a specific commit instead of a branch, you will get a warning in the format `HEAD detached at <short-commit-hash>`. 
 
 To save any changes you've made in this stage, follow these steps: 
-1. Put your changes on a temporary, local branch using `git branch <temporary-branch>
+1. Put your changes on a temporary, local branch using `git branch <temporary-branch>`
 2. Checkout your desired branch (e.g. main) using `git checkout <target-branch>`
 
 If you want to instead discard your local changes, see the above section. 
