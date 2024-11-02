@@ -171,7 +171,7 @@ To push a commit to a submodule, you'll need to `cd` into each submodule, from w
 git submodule foreach "git add . && git commit -m <commit-message> && git push"
 ```
 
-$^1$ _Perforce (or a self-hosted HelixCore instance) is an industry standard, and, if money is not an issue, should be preferred._
+$^1$ _Perforce (or a self-hosted HelixCore instance) is an industry standard and, if money is not an issue, should be preferred._
 
 ### Merge Requests
 Once the work on your branch is completed, you can merge your branch into master using a merge request, which you can read about [here](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request).
@@ -238,6 +238,13 @@ git clean -df
 On Windows, press `Esc` then type `:wq`; press `Enter`. 
 
 You _may_ have gotten this if you used `git commit`, instead of `git commit -m “<commit-message>”` – which is OK if you prefer it that way; however, It can happen for a number of other reasons.
+
+### Configuring Git
+If you receive the error `Filename too long` on Windows, run the following command in an administrator command prompt ([source](https://stackoverflow.com/questions/22575662/filename-too-long-in-git-for-windows)): 
+
+```bash
+git config --system core.longpaths true
+```
 
 ### Using Git With Unity
 Unity’s scenes and prefabs are both stored in very long, erratic files that are often mistaken by git as binaries even when represented as text. This makes them difficult to merge. For this reason, **only one person should be working on a given scene or prefab at any time**. If you were using a different Git manager, like Perforce, you could lock these types of files. 
