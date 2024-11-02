@@ -159,12 +159,12 @@ You should be pushing code every day you work on it, regardless of what branch i
 ### Git Submodules 
 Sometimes, it is impossible to store some assets in the same repository as your game code. For example, some third-party assets might be protected by an EULA that prevents you from redistributing, and you certainly shouldn’t “open-source” paid assets. Moving assets to a separate repository can allow you reduce space usage limits. Popular solutions include [Perforce](https://www.perforce.com/)$^1$, [Git LFS](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage), [Unity DevOps](https://docs.unity.com/ugs/manual/devops/manual/unity-devops-home), but it’s more practical to use a private repository as a git submodule, which you can read about [here](https://github.blog/open-source/git/working-with-submodules/). 
 
-You can specify the folder to place a submodule in -- for example, in Assets -- using: 
+You can specify the folder to place a submodule in using: 
 ```bash
 git submodule add <submodule-origin-url> <relative-path-to-submodule>
 ```
 
-To pull the latest changes from a submodule for the firs time use `git submodule update --init --recursive --remote`, after which use: `git pull --recurse-submodules`.
+To pull the latest changes from a submodule for the first time use `git submodule update --init --recursive --remote`, after which use: `git pull --recurse-submodules`. Like mentioned earlier, set up tracking information; this can be done by `cd`ing into the submodule's root directory and running `git checkout -b <branch> <origin>/<branch>` ([see more](https://stackoverflow.com/a/36375256/25169483)).
 
 To push a commit to a submodule, you'll need to `cd` into each submodule, from which you can issue git commands on that repository as usual. Alternatively, you can use [this command](https://stackoverflow.com/a/72219242/25169483): 
 ```bash
@@ -233,6 +233,17 @@ If any local changes still persist after running this command, first, make sure 
 ```bash
 git clean -df
 ```
+
+### Fixing Detached Head State 	
+A deatched head means that you have checkouted a specific commit instead of a branch, you will get a warning in the format `HEAD detached at <short-commit-hash>`. 
+
+To save any changes you've made in this stage, follow these steps: 
+1. Put your changes on a temporary, local branch using `git branch <temporary-branch>
+2. Checkout your desired branch (e.g. main) using `git checkout <target-branch>`
+
+If you want to instead discard your local changes, see the above section. 
+
+Finally run `git merge <temporary-branch>` while on `<target-branch`. 
 
 ### Exiting Vim Git Commit Editor
 On Windows, press `Esc` then type `:wq`; press `Enter`. 
