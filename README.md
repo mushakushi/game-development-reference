@@ -136,9 +136,12 @@ If there are any discrepancies between the status you see locally and what you s
 #### Applying Local Changes 
 At this point, you can make changes by editing the project as you normally would. Once you are done for the day follow these steps: 
 
-1. Use `git add .` to **track** all your changes (use `git reset git` or `git reset <file>` to undo this step). 
-2. Use `git commit -m <commit-message>` to **stage** your tracked changes for a commit. 
+1. Use `git add .` to **track** all your changes (use git add <file> to add a specific file or directory; use `git reset git` or `git reset <file>` to undo this step). 
+2. Use `git commit -m "<commit-message>"` to **stage** your tracked changes for a commit. 
 3. Use  `git push` to **apply** those changes to remote.
+
+>[!NOTE]
+>You can use `git commit -a -m "<commit-message>" to combine both steps 1 and 2. 
 
 If there is no tracking information for a branch use, 
 ```bash
@@ -164,11 +167,19 @@ You can specify the folder to place a submodule in using:
 git submodule add <submodule-origin-url> <relative-path-to-submodule>
 ```
 
-To pull the latest changes from a submodule for the first time use `git submodule update --init --recursive --remote`, after which use: `git pull --recurse`. If that doesn't work `cd` into the directory and run `git pull origin <branch>`. Like mentioned earlier, set up tracking information; this can be done by `cd`ing into the submodule's root directory and running `git checkout -b <branch> <origin>/<branch>` ([see more](https://stackoverflow.com/a/36375256/25169483)).
+To pull the latest changes from a submodule for the first time use `git submodule update --init --recursive --remote`, after which use: `git pull --recurse`. If that doesn't work `cd` into the submodule's root directory and run `git pull origin <branch>`. Like mentioned earlier, set up tracking information if there is not any already; this can be done by running `git checkout -b <branch> <origin>/<branch>` ([see more](https://stackoverflow.com/a/36375256/25169483)) in the same directory.
 
-To push a commit to a submodule, you'll need to `cd` into each submodule, from which you can issue git commands on that repository as usual. Alternatively, you can use [this command](https://stackoverflow.com/a/72219242/25169483): 
+To push a commit to a submodule, you'll need to `cd` into each submodule, from which you can issue git commands as usual. For submodules, however, this appraoch is generally preferred: 
 ```bash
-git submodule foreach "git add . && git commit -m <commit-message> && git push"
+git checkout <branch>
+git add .
+git commit -m "<commit-message>"
+git push
+
+cd <out-of-submodule-and-into-the-repository>
+git add .
+git commit -m "<commit-message>"
+git push 
 ```
 
 $^1$ _Perforce (or a self-hosted HelixCore instance) is an industry standard and, if money is not an issue, should be preferred._
@@ -243,7 +254,7 @@ To save any changes you've made in this stage, follow these steps:
 
 If you want to instead discard your local changes, see the above section. 
 
-Finally run `git merge <temporary-branch>` while on `<target-branch`. 
+Finally run `git merge <temporary-branch>` while on `<target-branch>`. 
 
 ### Exiting Vim Git Commit Editor
 On Windows, press `Esc` then type `:wq`; press `Enter`. 
