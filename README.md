@@ -141,7 +141,7 @@ At this point, you can make changes by editing the project as you normally would
 3. Use  `git push` to **apply** those changes to remote.
 
 >[!NOTE]
->You can use `git commit -a -m "<commit-message>" to combine both steps 1 and 2. 
+>You can use `git commit -am "<commit-message>" to combine both steps 1 and 2. 
 
 If there is no tracking information for a branch use, 
 ```bash
